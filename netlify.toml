@@ -5,3 +5,10 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+[forms]
+  [forms.contact]
+    name = "Contact Form"
+
+[[forms.contact.notifications]]
+  email = "info@thegraterworkshouse.org"
