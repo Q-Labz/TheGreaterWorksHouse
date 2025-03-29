@@ -192,6 +192,8 @@
               <div class="contact-form-block-outline w-form">
                 <form id="wf-form-Contact-Form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
                   <input type="hidden" name="form-name" value="contact">
+                  <input type="hidden" name="subject" value="New Contact Form Submission">
+                  <input type="hidden" name="notify" value="info@greaterworkshouse.org">
                   <p class="hidden">
                     <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                   </p>
@@ -328,6 +330,16 @@
           })
           .then(response => {
             if (response.ok) {
+              // Send notification email using Netlify function
+              fetch('/.netlify/functions/send-notification', {
+                method: 'POST',
+                body: JSON.stringify({
+                  email: 'info@greaterworkshouse.org',
+                  subject: 'New Contact Form Submission',
+                  formData: Object.fromEntries(formData)
+                })
+              });
+              
               form.reset();
               successMessage.style.display = 'block';
               errorMessage.style.display = 'none';

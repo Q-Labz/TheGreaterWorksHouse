@@ -1,10 +1,15 @@
 [build]
   publish = "public_html"
+  functions = "netlify/functions"
   
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+[functions]
+  external_node_modules = ["nodemailer"]
+  node_bundler = "esbuild"
 
 [forms]
   [forms.contact]
