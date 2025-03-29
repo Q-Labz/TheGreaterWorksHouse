@@ -1,19 +1,12 @@
 [build]
   publish = "public_html"
-  functions = "netlify/functions"
   
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
-[functions]
-  external_node_modules = ["nodemailer"]
-  node_bundler = "esbuild"
-
 [forms]
   [forms.contact]
     name = "Contact Form"
-
-[[forms.contact.notifications]]
-  email = "info@greaterworkshouse.org"
+    notify = "info@greaterworkshouse.org"
