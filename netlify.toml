@@ -9,4 +9,4 @@
 [forms]
   [forms.contact]
     name = "Contact Form"
-    notify = "info@greaterworkshouse.org"
+    notify = "info@thegreaterworkshouse.org"
