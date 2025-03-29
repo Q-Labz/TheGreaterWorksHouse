@@ -190,8 +190,16 @@
               </div>
               <!-- Contact Form -->
               <div class="contact-form-block-outline w-form">
-                <form id="wf-form-Contact-Form" name="contact" method="POST" data-netlify="true" class="contact-form">
+                <form id="wf-form-Contact-Form" 
+                      name="contact" 
+                      method="POST" 
+                      data-netlify="true" 
+                      netlify-honeypot="bot-field"
+                      data-netlify-success-redirect="/success"
+                      data-netlify-recaptcha="true">
                   <input type="hidden" name="form-name" value="contact">
+                  <input type="hidden" name="notify" value="info@thegreaterworkshouse.org">
+                  <input type="hidden" name="subject" value="New Contact Form Submission">
                   <div class="wrap-v-large">
                     <div class="w-layout-grid form-grid">
                       <div class="wrap-v-tiny"><label for="name" class="field-label">Name</label><input class="text-field-2 w-input" maxlength="256" name="name" data-name="Name" placeholder="Name" type="text" id="name" required=""></div>

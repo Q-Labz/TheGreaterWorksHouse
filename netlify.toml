@@ -9,4 +9,11 @@
 [forms]
   [forms.contact]
     name = "Contact Form"
-    notify = "info@thegreaterworkshouse.org"
+
+[[plugins]]
+  package = "@netlify/plugin-emails"
+
+[[forms.contact.notifications]]
+  to = "info@thegreaterworkshouse.org"
+  from = "noreply@netlify.com"
+  subject = "New Contact Form Submission"
