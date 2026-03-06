@@ -8631,4 +8631,13 @@ blockquote {
   }
 }
 
+/* Custom Additions */
+html {
+  scroll-behavior: smooth;
+}
+
+a, .w-button, .social-link, .team-card {
+  transition: all 0.3s ease;
+}
+
 
